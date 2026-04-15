@@ -32,16 +32,16 @@
             this.btnConsulta = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.lblOrigen = new System.Windows.Forms.Label();
-            this.rdbNacional = new System.Windows.Forms.RadioButton();
-            this.rdbImportado = new System.Windows.Forms.RadioButton();
-            this.rdbAmbos = new System.Windows.Forms.RadioButton();
             this.clmCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblOrigen = new System.Windows.Forms.Label();
+            this.rdbNacional = new System.Windows.Forms.RadioButton();
+            this.rdbImportado = new System.Windows.Forms.RadioButton();
+            this.rdbAmbos = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@
             this.btnConsulta.TabIndex = 1;
             this.btnConsulta.Text = "&Consulta";
             this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnSalir
             // 
@@ -90,6 +91,41 @@
             this.dgvConsulta.RowTemplate.Height = 28;
             this.dgvConsulta.Size = new System.Drawing.Size(772, 280);
             this.dgvConsulta.TabIndex = 3;
+            // 
+            // clmCodigo
+            // 
+            this.clmCodigo.FillWeight = 105.9322F;
+            this.clmCodigo.HeaderText = "Código";
+            this.clmCodigo.MinimumWidth = 8;
+            this.clmCodigo.Name = "clmCodigo";
+            // 
+            // clmNombre
+            // 
+            this.clmNombre.FillWeight = 102.2687F;
+            this.clmNombre.HeaderText = "Nombre";
+            this.clmNombre.MinimumWidth = 8;
+            this.clmNombre.Name = "clmNombre";
+            // 
+            // clmMarca
+            // 
+            this.clmMarca.FillWeight = 99.38132F;
+            this.clmMarca.HeaderText = "Marca";
+            this.clmMarca.MinimumWidth = 8;
+            this.clmMarca.Name = "clmMarca";
+            // 
+            // clmOrigen
+            // 
+            this.clmOrigen.FillWeight = 97.10566F;
+            this.clmOrigen.HeaderText = "Origen";
+            this.clmOrigen.MinimumWidth = 8;
+            this.clmOrigen.Name = "clmOrigen";
+            // 
+            // clmPrecio
+            // 
+            this.clmPrecio.FillWeight = 95.31216F;
+            this.clmPrecio.HeaderText = "Precio";
+            this.clmPrecio.MinimumWidth = 8;
+            this.clmPrecio.Name = "clmPrecio";
             // 
             // lblMarca
             // 
@@ -142,41 +178,6 @@
             this.rdbAmbos.Text = "Ambos";
             this.rdbAmbos.UseVisualStyleBackColor = true;
             // 
-            // clmCodigo
-            // 
-            this.clmCodigo.FillWeight = 105.9322F;
-            this.clmCodigo.HeaderText = "Código";
-            this.clmCodigo.MinimumWidth = 8;
-            this.clmCodigo.Name = "clmCodigo";
-            // 
-            // clmNombre
-            // 
-            this.clmNombre.FillWeight = 102.2687F;
-            this.clmNombre.HeaderText = "Nombre";
-            this.clmNombre.MinimumWidth = 8;
-            this.clmNombre.Name = "clmNombre";
-            // 
-            // clmMarca
-            // 
-            this.clmMarca.FillWeight = 99.38132F;
-            this.clmMarca.HeaderText = "Marca";
-            this.clmMarca.MinimumWidth = 8;
-            this.clmMarca.Name = "clmMarca";
-            // 
-            // clmOrigen
-            // 
-            this.clmOrigen.FillWeight = 97.10566F;
-            this.clmOrigen.HeaderText = "Origen";
-            this.clmOrigen.MinimumWidth = 8;
-            this.clmOrigen.Name = "clmOrigen";
-            // 
-            // clmPrecio
-            // 
-            this.clmPrecio.FillWeight = 95.31216F;
-            this.clmPrecio.HeaderText = "Precio";
-            this.clmPrecio.MinimumWidth = 8;
-            this.clmPrecio.Name = "clmPrecio";
-            // 
             // frmConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -195,6 +196,7 @@
             this.Name = "frmConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AUTOCOR - Consultar";
+            this.Load += new System.EventHandler(this.frmConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
