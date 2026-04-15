@@ -1,1 +1,3 @@
 1,fsfs,Marca A,3333.00,Nacional
+4,das,Marca A,1.00,Nacional
+6,s,Marca C,32.00,Importado

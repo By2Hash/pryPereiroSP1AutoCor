@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.IO;
 
 namespace pryPereiroSP1AutoCor
 {
@@ -21,7 +23,8 @@ namespace pryPereiroSP1AutoCor
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            // permitir control, dígitos, coma o punto para decimales
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
             {
                 e.Handled = true;
             }
@@ -42,7 +45,8 @@ namespace pryPereiroSP1AutoCor
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            frmConsultar consultar = new frmConsultar();
+            // pasar sólo el nombre del archivo: frmConsultar usa Application.StartupPath internamente
+            frmConsultar consultar = new frmConsultar(PATH_ARCHIVO);
             consultar.ShowDialog();
         }
 
@@ -71,9 +75,9 @@ namespace pryPereiroSP1AutoCor
             {
                 // crear un nuevo repuesto
                 Repuesto nuevoRep = CrearRepuesto();
-                // grabar en el archivo
+                // grabar en el archivo (usar ruta completa en la carpeta de la app)
                 Archivo Repuestos = new Archivo();
-                Repuestos.NombreArchivo = PATH_ARCHIVO;
+                Repuestos.NombreArchivo = Path.Combine(Application.StartupPath, PATH_ARCHIVO);
                 Repuestos.GrabarRepuesto(nuevoRep);
                 // restaurar la interfaz al estado inicial
                 Inicializar();
@@ -88,26 +92,35 @@ namespace pryPereiroSP1AutoCor
 
         private bool ValidarDatos()
         {
-            bool resultado = false;
-            if (txtCodigo.Text != "") // controla el valor del código
+            // comprobar campos no vacíos
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
-                if (txtNombre.Text != "") // controla el nombre
-                {
-                    if (txtPrecio.Text != "") // controla el precio
-                    {
-                        Archivo Repuestos = new Archivo();
-                        Repuestos.NombreArchivo = PATH_ARCHIVO;
-                        // controla que no se repita el codigo del repuesto
-                        if (Repuestos.BuscarCodigoRepuesto(txtCodigo.Text) == false)
-                        {
-                            resultado = true; // devuelve verdadero sólo si todas
-                                              // las condiciones se cumplieron
-                        }
-                    }
-                }
+                return false;
             }
-            return resultado;
 
+            // comprobar precio válido (acepta coma o punto)
+            string precioText = txtPrecio.Text.Trim().Replace(',', '.');
+            decimal precio;
+            if (!decimal.TryParse(precioText, NumberStyles.Number, CultureInfo.InvariantCulture, out precio))
+            {
+                MessageBox.Show("Precio inválido. Use sólo números (ej. 12 o 12.50).", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // comprobar que no exista el código (usar ruta completa)
+            Archivo Repuestos = new Archivo();
+            Repuestos.NombreArchivo = Path.Combine(Application.StartupPath, PATH_ARCHIVO);
+            if (Repuestos.BuscarCodigoRepuesto(txtCodigo.Text.Trim()))
+            {
+                MessageBox.Show("El código ya existe. Ingrese otro código.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         private Repuesto CrearRepuesto()
@@ -115,10 +128,12 @@ namespace pryPereiroSP1AutoCor
             // se crea un nuevo objeto de tipo Repuesto
             Repuesto nuevoRep = new Repuesto();
             // se asignan los valores a todas sus propiedades
-            nuevoRep.Codigo = txtCodigo.Text;
-            nuevoRep.Nombre = txtNombre.Text;
+            nuevoRep.Codigo = txtCodigo.Text.Trim();
+            nuevoRep.Nombre = txtNombre.Text.Trim();
             nuevoRep.Marca = cmbMarca.SelectedItem.ToString();
-            nuevoRep.Precio = decimal.Parse(txtPrecio.Text);
+            // parse seguro del precio
+            string precioText = txtPrecio.Text.Trim().Replace(',', '.');
+            nuevoRep.Precio = decimal.Parse(precioText, NumberStyles.Number, CultureInfo.InvariantCulture);
             if (rdbNacional.Checked)
             {
                 nuevoRep.Origen = "Nacional";
@@ -133,7 +148,6 @@ namespace pryPereiroSP1AutoCor
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Inicializar();
-
         }
     }
 }
