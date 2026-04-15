@@ -1,0 +1,10 @@
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\bin\Debug\pryPereiroSP1AutoCor.exe.config
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\bin\Debug\pryPereiroSP1AutoCor.exe
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\bin\Debug\pryPereiroSP1AutoCor.pdb
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.csproj.AssemblyReference.cache
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.frmPrincipal.resources
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.Properties.Resources.resources
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.csproj.GenerateResource.cache
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.csproj.CoreCompileInputs.cache
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.exe
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.pdb
