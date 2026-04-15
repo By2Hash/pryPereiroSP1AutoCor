@@ -8,3 +8,5 @@ C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj
 C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.csproj.CoreCompileInputs.cache
 C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.exe
 C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.pdb
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.exe.config
+C:\Users\baupe\OneDrive\Escritorio\pryPereiroSP1AutoCor\pryPereiroSP1AutoCor\obj\Debug\pryPereiroSP1AutoCor.frmConsultar.resources

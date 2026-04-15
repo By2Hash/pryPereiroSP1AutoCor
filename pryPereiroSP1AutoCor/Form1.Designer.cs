@@ -41,9 +41,9 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnlRepuesto = new System.Windows.Forms.Panel();
-            this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.rdbNacional = new System.Windows.Forms.RadioButton();
             this.rdbImportado = new System.Windows.Forms.RadioButton();
+            this.rdbNacional = new System.Windows.Forms.RadioButton();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.pnlRepuesto.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,6 +141,7 @@
             this.btnConsultar.TabIndex = 11;
             this.btnConsultar.Text = "&Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnSalir
             // 
@@ -171,13 +172,16 @@
             this.pnlRepuesto.Size = new System.Drawing.Size(500, 394);
             this.pnlRepuesto.TabIndex = 13;
             // 
-            // cmbMarca
+            // rdbImportado
             // 
-            this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(130, 192);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(272, 28);
-            this.cmbMarca.TabIndex = 14;
+            this.rdbImportado.AutoSize = true;
+            this.rdbImportado.Location = new System.Drawing.Point(293, 339);
+            this.rdbImportado.Name = "rdbImportado";
+            this.rdbImportado.Size = new System.Drawing.Size(107, 24);
+            this.rdbImportado.TabIndex = 16;
+            this.rdbImportado.TabStop = true;
+            this.rdbImportado.Text = "Importado";
+            this.rdbImportado.UseVisualStyleBackColor = true;
             // 
             // rdbNacional
             // 
@@ -190,22 +194,20 @@
             this.rdbNacional.Text = "Nacional";
             this.rdbNacional.UseVisualStyleBackColor = true;
             // 
-            // rdbImportado
+            // cmbMarca
             // 
-            this.rdbImportado.AutoSize = true;
-            this.rdbImportado.Location = new System.Drawing.Point(293, 339);
-            this.rdbImportado.Name = "rdbImportado";
-            this.rdbImportado.Size = new System.Drawing.Size(107, 24);
-            this.rdbImportado.TabIndex = 16;
-            this.rdbImportado.TabStop = true;
-            this.rdbImportado.Text = "Importado";
-            this.rdbImportado.UseVisualStyleBackColor = true;
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(130, 192);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(272, 28);
+            this.cmbMarca.TabIndex = 14;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.pnlRepuesto);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnConsultar);

@@ -37,5 +37,11 @@ namespace pryPereiroSP1AutoCor
         {
             Close();
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            frmConsultar consultar = new frmConsultar();
+            consultar.ShowDialog();
+        }
     }
 }
